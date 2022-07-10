@@ -17,6 +17,7 @@ https://pen-y-fan.github.io/2021/08/08/How-to-install-MySQL-on-WSL-2-Ubuntu/
 
 * If getting driver error when running migrations or trying to make a request to an endpoint the following command may resolve this: `sudo apt-get install php-mysql`
 
+* changing up some of the typescript syntaxs I'm used too since version 3.9.5, TypeScript enforces strictNullChecks on numbers and strings
 
 
 ## Todo
