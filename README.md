@@ -23,3 +23,5 @@ https://pen-y-fan.github.io/2021/08/08/How-to-install-MySQL-on-WSL-2-Ubuntu/
 ## Todo
 
 - [ ] Create random generated seeders, or pull from a online API to populate the database tables for future ease of access
+- [ ] Create test database connection before connections can be established
+- [ ] Create unit tests for UserController
