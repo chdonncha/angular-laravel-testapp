@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../../services/api.service';
+import { MatTableDataSource } from "@angular/material/table";
+import { MatPaginator } from "@angular/material/paginator";
 
 @Component({
   selector: 'app-home',
@@ -7,19 +9,19 @@ import { ApiService } from '../../services/api.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'first_name', 'full_name', 'email', 'gender'];
+  displayedColumns: string[] = ['first_name', 'last_name', 'email', 'gender'];
   users: any;
   isLoading = true;
   dataSource = null as any;
   url: any;
+
+  @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
 
   constructor(private apiService: ApiService) {
   }
 
   ngOnInit() {
     this.loadUserPage();
-    // this.getUserData();
-    console.log(this.dataSource);
 
   }
 
@@ -29,8 +31,9 @@ export class HomeComponent implements OnInit {
       data => {
         this.isLoading = false;
         this.dataSource = data;
-        // this.dataSource = new MatTableDataSource(this.dataSource);
-        // this.dataSource.paginator = this.paginator
+        this.dataSource = new MatTableDataSource(this.dataSource);
+        this.dataSource.paginator = this.paginator;
+        console.log(this.dataSource);
       },
       error => this.isLoading = false
     );
@@ -40,5 +43,4 @@ export class HomeComponent implements OnInit {
     this.isLoading = true;
     this.getUserData();
   }
-
 }

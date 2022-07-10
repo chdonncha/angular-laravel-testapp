@@ -1,9 +1,53 @@
-<div>
-    <p>home works!</p>
+<mat-card>
+    <mat-card-content>
+        <table>
+            <tr>
+                <button mat-raised-button color="primary" routerLink="/users/create">Create User</button>
+            </tr>
+            <tr>
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
 
-    <pre>Users: {{ dataSource | json }}</pre>
-</div>
 
+                    <!-- Full Name Column -->
+                    <ng-container matColumnDef="first_name">
+                        <th mat-header-cell *matHeaderCellDef> Full Name</th>
+                        <td mat-cell
+                            *matCellDef="let element"> {{element.first_name}} {{ element.first_name}} </td>
+                    </ng-container>
+
+                    <!-- Email Column -->
+                    <ng-container matColumnDef="last_name">
+                        <th mat-header-cell *matHeaderCellDef> Email</th>
+                        <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+                    </ng-container>
+
+                    <!-- Email Column -->
+                    <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef> Email</th>
+                        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                    </ng-container>
+
+                    <!-- Email Column -->
+                    <ng-container matColumnDef="gender">
+                        <th mat-header-cell *matHeaderCellDef> Email</th>
+                        <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+
+                <mat-paginator class="mat-elevation-z9"
+                               showFirstLastButtons
+                               [length]="dataSource.filteredData.length"
+                               [pageSize]="15"
+                               [pageSizeOptions]="[5, 15, 30, 100]"
+                               aria-label="Select page">
+                </mat-paginator>
+            </tr>
+        </table>
+    </mat-card-content>
+</mat-card>
 <div *ngIf="isLoading"
      style="display: flex; justify-content: center; align-items: center; background: white;">
     <mat-progress-spinner
@@ -11,4 +55,3 @@
             mode="indeterminate">
     </mat-progress-spinner>
 </div>
-
