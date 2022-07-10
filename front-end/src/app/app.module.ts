@@ -13,11 +13,11 @@ import { UsersComponent } from './pages/users/users.component';
     AppComponent,
     HomeComponent,
     UsersComponent,
-    HttpClientModule,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

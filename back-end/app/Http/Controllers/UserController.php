@@ -15,7 +15,7 @@ class UserController extends BaseController
 
 
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    
+
     /**
      * @return \Illuminate\Http\JsonResponse|object
      */

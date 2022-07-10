@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file:$PROJECT_DIR$/../../../../..//$PROJECT_DIR$/.idea/angularjs-laravel-testapp.iml" filepath="$PROJECT_DIR$/.idea/angularjs-laravel-testapp.iml" />
+      <module fileurl="file:$PROJECT_DIR$/../../../../../////wsl$/Ubuntu/home/donncha/angular-laravel-testapp/.idea/angularjs-laravel-testapp.iml" filepath="///wsl$/Ubuntu/home/donncha/angular-laravel-testapp/.idea/angularjs-laravel-testapp.iml" />
     </modules>
   </component>
 </project>
