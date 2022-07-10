@@ -30,4 +30,5 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix'=>'users'], function() {
     Route::get('/', ['uses' => 'App\Http\Controllers\UserController@getUsers']);
     Route::get('random', ['uses' => 'App\Http\Controllers\UserController@getRandomUser']);
+    Route::get('{id}', ['uses' => 'App\Http\Controllers\UserController@getUserById'])->where('id', '[0-9]+');
 });
