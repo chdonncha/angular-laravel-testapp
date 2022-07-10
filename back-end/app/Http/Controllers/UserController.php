@@ -28,6 +28,16 @@ class UserController extends BaseController
             return response()->json($Users)->setStatusCode(500);
         }
     }
+
+    public function getRandomUser() {
+        $randomInt = rand(1,100);
+        try {
+            $Users = UserModel::where('id', '=', $randomInt)->get();
+            return response()->json($Users)->setStatusCode(200);
+        } catch (Exception $e) {
+            return response()->json($Users)->setStatusCode(500);
+        }
+    }
 }
 
 // Test database connection

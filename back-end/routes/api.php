@@ -24,4 +24,10 @@ use Illuminate\Support\Facades\Route;
 //});
 
 
-Route::get('users', ['uses' => 'App\Http\Controllers\UserController@getUsers']);
+//Route::get('users', ['uses' => 'App\Http\Controllers\UserController@getUsers']);
+//Route::get('users', ['uses' => 'App\Http\Controllers\UserController@getUsers']);
+
+Route::group(['prefix'=>'users'], function() {
+    Route::get('/', ['uses' => 'App\Http\Controllers\UserController@getUsers']);
+    Route::get('random', ['uses' => 'App\Http\Controllers\UserController@getRandomUser']);
+});
